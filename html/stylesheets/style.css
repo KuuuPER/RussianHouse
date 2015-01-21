@@ -79,31 +79,40 @@ a img {
   margin: 0 2px 0 3px;
 }
 .wanna-help, .wanna-help:visited {
+  border: 2px solid #000001;
   float: right;
   list-style: none;
-  padding: 0;
+  padding: 6px;
   margin: 0;
   display: block;
   position: relative;
-  width: 147px;
 }
 .bottom-counter.js-counter-index .wanna-help {
     float: none;
     display: inline-block;
 }
 .wanna-help span {
-    background: #cc0001;
+    line-height: 30px;
+    background: #FBB03B;
     border: none;
     display: block;
-    color: white;
-    padding: 10px 0;
+    color: black;
+    padding: 10px;
     font-size: 15px;
     text-align: center;
-    width: 147px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+}
+.wanna-help span:hover {
+    background: white;
+}
+.wanna-help span span.number {
+  background: inherit;
+  font-size: 20px;
+  display: inline;
+  padding: 0;
 }
 .wanna-help ul {
     display: none;
@@ -203,9 +212,9 @@ a img {
   color: white;
   text-decoration: none;
 }
-.wanna-help li:hover span {
+/*.wanna-help li:hover span {
   background: #000;
-}
+}*/
 .counter-all-target{
   font-size: 17px;
   line-height: 24px;
@@ -238,7 +247,7 @@ a img {
 .bottom-counter{
   text-align: center;
   font-size: 16px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .payments-people{
   width: 400px;

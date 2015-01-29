@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header>
+    <div class="centerContent">
+        <div id="money">
+            <div class="border fund">
+                Помочь через Яндекс.Деньги
+            </div>
+            <div id="currentSum" class="border yellowFill">
+                Собрано 1005000 руб. из 2 500 000 руб.
+            </div>
+            <div class="border yellowFill fund">
+                Помочь через другие системы
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="navDiv" class="centerContent">
+            <nav id="menu" class="border">
+                <ul>
+                    <li>@Html.ActionLink("О проекте", "AboutProject", "Home")</li>
+                    <li>@Html.ActionLink("Сбор средств", "FundRising", "Home")</li>
+                    <li>@Html.ActionLink("Новости", "News", "Home")</li>
+                    <li>@Html.ActionLink("Партнёры", "Partners", "Home")</li>
+                    <li>@Html.ActionLink("Команда", "Team", "Home")</li>
+                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

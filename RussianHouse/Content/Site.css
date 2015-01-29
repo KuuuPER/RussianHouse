@@ -1,0 +1,43 @@
+﻿#money {
+    width: 1000px;
+    margin: 50px 20px 20px 41px;
+}
+
+#money div {
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fund {
+    width: 150px;
+}
+
+#currentSum {
+    width: 450px;
+    text-align: center;
+}
+
+#menu ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.centerContent {
+    margin: 0 25% 0 25%;
+    width: 50%;
+}
+
+#navDiv {
+    text-align: center;
+    width: 1126px;
+}
+
+.yellowFill {
+    background: #fbb03b
+}
+
+.border {
+    padding: 20px;
+    border: 2px solid black;
+}

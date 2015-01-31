@@ -1,0 +1,35 @@
+﻿@using System.Web.Services.Description
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width"/>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/")
+</head>
+<body>
+<div>
+    @RenderSection("featured", required: false)
+    @RenderBody()
+</div>
+<footer>
+    <div>
+    </div>
+</footer>
+
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+</body>
+<script type="text/javascript">
+    $('nav ul li').each(function() {
+        if (this.getElementsByTagName("a")[0].href == location.href) {
+            $(this).children("a")[0].className = "active";
+        }
+    });
+</script>
+</html>

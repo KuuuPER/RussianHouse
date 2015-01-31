@@ -1,0 +1,151 @@
+﻿header {
+    margin-top: 50px;
+}
+
+#head {
+    width: 100%;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+#vk_groups {
+    margin: auto;
+}
+
+#money {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#money div {
+    display: inline-block;
+    vertical-align: top;
+    width: 550px;
+    text-align: center;
+    height: 90px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+#currentSum {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#currentSum p {
+    margin-top: 18px;
+    font-size: 30px;
+    color: black;
+    height: 100%;
+}
+
+#currentSum p b {
+    font-size: 40px;
+    color: #FF5621;
+}
+
+#money #projectHelpBorder {
+    margin-left: 15px;
+    width: 270px;
+    height: 90px;
+}
+
+#money #projectHelp {
+    width: 270px;
+    height: 90px;
+}
+
+#projectHelp p {
+    margin-top: 22px;
+    font-size: 35px
+}
+
+#menu {
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    left: 50px;
+}
+
+.PTSansText {
+    font-family: 'PT Sans', sans-serif;
+}
+
+#menu ul li {
+    display: inline;
+    margin-left: 55px;
+    font-family: 'PT Sans Narrow', serif;
+    font-size: 25px;
+}
+
+#menu ul li a:hover { 
+   text-decoration: none;
+   color: #FF5621;
+}
+
+#money #projectHelp:hover {
+    background: #4cb5ab;
+}
+
+#projectHelpBorder a {
+    text-decoration: none;
+    color: white;
+}
+
+#money div div p {
+    font-family: 'PT Sans Narrow', serif;
+}
+
+.active {
+   text-decoration: none;
+   font-weight: bold;
+   color: #FF5621; 
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#logoMenu {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#logo {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.centerContent {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#navDiv {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 1126px;
+}
+
+.orangeText a {
+    color: #FF5621;
+}
+
+.orangeFill {
+    background: #FF5621;
+}
+
+#money .border {
+    height: 86px;
+    border: 2px solid black;
+}

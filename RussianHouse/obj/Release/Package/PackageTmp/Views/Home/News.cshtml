@@ -1,0 +1,18 @@
+﻿@model RussianHouse.SectionsContent.ISectionContent
+
+<div class="fullWidth centerContent">
+    <div id="news">
+        <h2 class="PTSansText">
+            @Model.Title
+        </h2>
+        <p class="PTSansText">
+            @Model.Content
+        </p>
+        <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+        <div id="vk_groups">
+            <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", { mode: 0, width: "220", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6' }, 83269223);
+            </script>
+        </div>
+    </div>
+</div>

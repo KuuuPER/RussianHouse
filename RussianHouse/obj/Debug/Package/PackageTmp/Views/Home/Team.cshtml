@@ -1,3 +1,38 @@
-﻿<div>
-    
+﻿@model RussianHouse.ViewModel.TeamMemberViewModel
+<div id="content" class="fullWidth centerContent">
+    <div id="contentContainer" class="centerContent contentContainer borderContent">
+        <div id="contentFiller"></div>
+        <div id="teamDiv" class="centerText container">
+            @foreach (var e in Model.Members)
+            {
+                @TeamMember(e.Name, e.Title)
+            }
+        </div>
+    </div>
+    <div id="bottom" class="separator">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr/>
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
 </div>
+
+@helper TeamMember(string name, string title)
+{
+    <div class="teamMember span6">
+        <div class="photoLogo">
+            <div class="memberPhoto">
+
+            </div>
+            <div class="vkLogo">
+                <img src="/Images/rusdom-vk.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+            </div>
+        </div>
+        <div class="memberDesc">
+            <p class="title"><b>@name</b></p>
+            <hr/>
+            <p class="desc">@title</p>
+        </div>
+    </div>
+}

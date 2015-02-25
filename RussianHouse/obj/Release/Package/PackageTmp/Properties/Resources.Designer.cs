@@ -72,6 +72,24 @@ namespace RussianHouse.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Открытка.
+        /// </summary>
+        internal static string FirstGift {
+            get {
+                return ResourceManager.GetString("FirstGift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to О как нам нужны деньги! Мы бы так хотели получить денег, если бы они у вас были! Если бы они у вас были, вы могли бы их дать нам, а они нам так нужны, потому что у нас их нет, а у вас они возможно есть и вы не прочь ими поделиться. Если бы вы нам дали денег, мы бы очень обрадовались, а если бы не дали, то огорчились..
         /// </summary>
         internal static string FundRising {
@@ -86,6 +104,42 @@ namespace RussianHouse.Properties {
         internal static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Partners {
+            get {
+                return ResourceManager.GetString("Partners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Купон на &lt;m&gt;1 час&lt;/m&gt; в заведении.
+        /// </summary>
+        internal static string SecondGift {
+            get {
+                return ResourceManager.GetString("SecondGift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Team {
+            get {
+                return ResourceManager.GetString("Team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Скидочная карта &lt;m&gt;20%&lt;/m&gt;.
+        /// </summary>
+        internal static string ThirdGift {
+            get {
+                return ResourceManager.GetString("ThirdGift", resourceCulture);
             }
         }
     }

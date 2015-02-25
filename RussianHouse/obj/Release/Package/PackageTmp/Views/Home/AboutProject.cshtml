@@ -1,23 +1,21 @@
 ﻿@model RussianHouse.ViewModel.UserDataViewModel
-
-<div class="centerContent">
-    <h2 class="PTSansText">
-        @Model.Content.Title
-    </h2>
-    <p class="PTSansText">
-        @Model.Content.Content
-    </p>
-</div>
-<div class="centerContent">
-    @Html.ValidationMessageFor(x => x.Email)
-    <br />
-    @using (Html.BeginForm("AddUserData", "Home", FormMethod.Post))
-    {
-        @Html.LabelFor(d => d.Email)
-        <br />
-        @Html.EditorFor(t => t.Email)
-        <p><input type="submit" value="Создать запись!" /></p>
-    }
-    <br />
-    <a href="/Home/SendEmailToAll">Отослать всех!</a>
+<div id="content" class="fullWidth centerContent">
+    <div class="centerContent contentContainer borderContent">
+        <div id="contentFiller"></div>
+        <span>
+        <h2 class="VremenaText">
+            @Model.Content.Title
+        </h2>
+        <p class="VremenaText">
+            @Model.Content.Content
+        </p>
+        </span>
+    </div>
+    <div id="bottom" class="separator">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr />
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
 </div>

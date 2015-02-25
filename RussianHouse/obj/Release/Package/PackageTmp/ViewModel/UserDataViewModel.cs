@@ -12,5 +12,6 @@ namespace RussianHouse.ViewModel
         public string Email { get; set; }
         public ISectionContent Content { get; set; }
         public EnSection SelectedSection { get; set; }
+        public string Balance { get; set; }
     }
 }

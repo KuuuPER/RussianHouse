@@ -1,18 +1,25 @@
 ﻿@model RussianHouse.SectionsContent.ISectionContent
-
-<div class="fullWidth centerContent">
-    <div id="news">
-        <h2 class="VremenaText">
-            @Model.Title
-        </h2>
-        <p class="VremenaText">
-            @Model.Content
-        </p>
-        <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
-        <div id="vk_groups">
+<div id="content" class="fullWidth centerContent">
+    <div id="contentContainer" class="centerContent contentContainer borderContent">
+        <div id="contentFiller"></div>
+        <div class="centerText">
+            <h2 class="VremenaText">
+                @Model.Title
+            </h2>
+            <p class="VremenaText">
+                @Model.Content
+            </p>
+            <div id="vk_groups"></div>
             <script type="text/javascript">
-                VK.Widgets.Group("vk_groups", { mode: 0, width: "220", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6' }, 83269223);
+                VK.Widgets.Group("vk_groups", { mode: 2, wide: 1, width: "850", height: "850", color3: "F47E16"}, 83269223);
             </script>
         </div>
+    </div>
+    <div id="bottom" class="separator">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr />
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
     </div>
 </div>

@@ -1,13 +1,126 @@
-﻿@model RussianHouse.SectionsContent.ISectionContent
+﻿@model RussianHouse.ViewModel.FundRisingViewModel
+<div id="content" class="fullWidth centerContent">
+    <div id="upperContent" class="centerContent borderContent contentContainer">
+        <div id="contentFiller"></div>
+        <span>
+            <h2 class="VremenaText">
+                @Model.Content.Title
+            </h2>
+            <p class="VremenaText">
+                @Model.Content.Content
+            </p>
+        </span>
+    </div>
+    <div class="twoLines">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr class="littleLine"/>
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <div>
+                <hr class="littleLine"/>
+            </div>
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
+    <div id="lowerContent" class="container borderContent">
+        <div id="leftColumn" class="span6">
+            <div class="centerContent">
+                @for (int i = 0; i < Model.RoadMaps.Length - 1; i++)
+                {
+                    var roadMap = Model.RoadMaps[i];
+                    @RoadMap(roadMap.TotalSum, roadMap.Title, roadMap.Text);
+                }
+                @{ var lastRoadMap = Model.RoadMaps[Model.RoadMaps.Length - 1];}
+                <div class="roadMap">
+                    <div class="roadMapUpper">
+                        <p class="collectedSum">
+                            @(lastRoadMap.TotalSum) <span class="roubleSign">&#8381;</span>
+                        </p>
+                    </div>
+                    <div class="roadMapLower">
+                        <span>
+                            <p><b>@MvcHtmlString.Create(lastRoadMap.Title)</b></p>
+                            <p><i>&#171;@MvcHtmlString.Create(lastRoadMap.Text)&#187;</i></p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightColumn span6">
+            <div class="centerContent">
+                @{ var val = 1;}
+                @foreach (var payModel in Model.PaymentsAndGifts)
+                {
+                    @PaymentsAndGifts(payModel.PaymentSum, payModel.Gifts, payModel.IsPopular, val)
+                    val++;
+                }
+            </div>
+        </div>
+    </div>
+    <div class="twoLines">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr class="littleLine"/>
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <div>
+                <hr class="littleLine"/>
+            </div>
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
+</div>
 
-<div class="centerContent">
-    <h2 class="orienbaumText">
-        @Model.Title
-    </h2>
-    <p class="orienbaumText">
-        @Model.Content
-    </p>
-</div>
-<div class="centerContent">
-    <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=410011626723042&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%92%D0%BE+%D0%B8%D0%BC%D1%8F+%D0%A1%D0%B0%D1%82%D0%B0%D0%BD%D1%8B!&targets-hint=&default-sum=5&button-text=01&mail=on&successURL=" width="450" height="198"></iframe>
-</div>
+@helper PaymentsAndGifts(int sum, string[] gifts, bool isPopular, int val)
+{
+    <div class="paymentsAndGifts">
+        <div @(isPopular ? MvcHtmlString.Create("class=\"paymentBackgroundUpper selected\"") : MvcHtmlString.Create("class=paymentBackgroundUpper"))>
+            <div class="paymentForegroundUpper" value="@(val)">
+                <p class="paymentSum">
+                    @(sum) <span class="roubleSign">&#8381;</span>
+                </p>
+                <div class="paymentForm">
+                    <a class="payButton" onclick="openModal(this);">
+                        <p>Выбрать</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div @(isPopular ? MvcHtmlString.Create("class=\"paymentBackgroundLower selected\"") : MvcHtmlString.Create("class=paymentBackgroundLower"))>
+            <div class="paymentForegroundLower">
+                <span>
+                    <p>Вознаграждение:</p>
+                    @foreach (var s in gifts)
+                    {
+                        <p>@(MvcHtmlString.Create(s))</p>
+                    }
+                </span>
+            </div>
+            @if (isPopular)
+            {
+                <div id="mostPopular"><span><p class="mostPop">Самый популярный вариант</p></span></div>
+            }
+        </div>
+    </div>
+}
+
+@helper RoadMap(int sum, string title, string text)
+{
+    <div class="roadMap">
+            <div class="roadMapUpper">
+                <p class="collectedSum">
+                    @(sum) <span class="roubleSign">&#8381;</span>
+                </p>
+            </div>
+        <div class="roadMapLower">
+            <span>
+                <p><b>@MvcHtmlString.Create(title)</b></p>
+                <p><i>&#171;@MvcHtmlString.Create(text)&#187;</i></p>
+            </span>
+        </div>
+        <div class="mapArrow"></div>
+    </div>
+}

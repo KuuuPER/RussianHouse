@@ -20,6 +20,7 @@ namespace RussianHouse
         {
             AreaRegistration.RegisterAllAreas();
             Database.SetInitializer(new DropCreateDatabaseAlways<UserDatasContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<YandexContext>());
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

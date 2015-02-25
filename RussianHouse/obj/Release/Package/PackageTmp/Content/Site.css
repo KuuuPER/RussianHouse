@@ -1,4 +1,9 @@
-﻿header {
+﻿#page {
+    width: 1060px;
+    height: 100%;
+}
+
+header {
     margin-top: 50px;
 }
 
@@ -14,6 +19,10 @@
     margin: auto;
 }
 
+#currentSum #gettedSum {
+    color: #FFA900;
+}
+
 #money {
     text-align: center;
     width: 100%;
@@ -24,13 +33,17 @@
 #money div {
     display: inline-block;
     vertical-align: top;
-    width: 550px;
+    width: 605px;
     text-align: center;
     height: 90px;
 }
 
 .textCenter {
     text-align: center;
+}
+
+#currentSumBorder {
+    margin-left: -32px;
 }
 
 #currentSum {
@@ -40,7 +53,7 @@
 }
 
 #currentSum p {
-    margin-top: 18px;
+    margin-top: 35px;
     font-size: 30px;
     color: black;
     height: 100%;
@@ -48,7 +61,7 @@
 
 #currentSum p b {
     font-size: 40px;
-    color: #FF5621;
+    color: #FF8000;
 }
 
 #money #projectHelpBorder {
@@ -58,94 +71,552 @@
 }
 
 #money #projectHelp {
-    width: 270px;
+    width: 300px;
     height: 90px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    background: #fefcea; /* Для старых браузров */
+    background: linear-gradient(to top, #FF8000, #FFA900);
+    -webkit-box-shadow: 1px 1px 3px 0 black;
+    -ms-box-shadow: 1px 1px 3px 0 black;
+    box-shadow: 1px 1px 3px 0 black;
 }
 
 #projectHelp p {
-    margin-top: 22px;
-    font-size: 35px
+    margin-top: 37px;
+    font-size: 35px;
+    -ms-text-shadow: black 1px 1px 1px;
+    text-shadow: black 1px 1px 1px;
 }
 
 #menu {
     display: inline-block;
     position: absolute;
-    top: 35px;
-    left: 50px;
+    top: 50px;
+    left: 20px;
 }
 
-.PTSansText {
-    font-family: 'PT Sans', sans-serif;
+#upperContent {
+    height: 200px;
+}
+
+#lowerContent {
+    width: 1000px;
+}
+
+.VremenaText {
+    font-family: 'Vremena';
 }
 
 #menu ul li {
-    display: inline;
-    margin-left: 55px;
-    font-family: 'PT Sans Narrow', serif;
-    font-size: 25px;
+    display: inline-block;
+    font-family: 'Vremena';
+    font-size: 30px;
+    margin-right: 30px;
 }
 
-#menu ul li a:hover { 
-   text-decoration: none;
-   color: #FF5621;
+#content div span.roubleSign {
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'PT Serif';
+}
+
+#menu ul li:hover { 
+   color: #FF8000;
+   cursor: pointer;
+}
+
+#aboutProject {
+    width: 135px;
+}
+
+#fundRising {
+    width: 173px;
+}
+
+#news {
+    width: 112px;
+}
+
+#team {
+    width: 117px;
+}
+
+#partners {
+    width: 137px;
+}
+
+#contacts {
+    width: 135px;
+}
+
+#content div span {
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 40px;
 }
 
 #money #projectHelp:hover {
-    background: #4cb5ab;
+    background: linear-gradient(to top, #30A49B, #5AC189);
+    cursor: pointer;
 }
 
-#projectHelpBorder a {
+#projectHelpBorder i {
     text-decoration: none;
     color: white;
 }
 
 #money div div p {
-    font-family: 'PT Sans Narrow', serif;
+    font-family: 'Vremena';
 }
 
 .active {
-   text-decoration: none;
    font-weight: bold;
-   color: #FF5621; 
+   color: #FF8000; 
 }
 
-ul li a {
-    text-decoration: none;
+ul li {
     color: black;
 }
 
 #logoMenu {
     width: 100%;
-    text-align: center;
     margin: 0 auto;
 }
 
 #logo {
-    margin-top: 25px;
-    text-align: center;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 725px;
+    height: 115px;
+    background: url(/Images/logo.svg);
 }
 
 .centerContent {
     margin: 0 auto;
-    width: 50%;
+}
+
+.centerText {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#navDivPic {
+    margin-top: 25px;
+    display: inline-block;
+    position: relative;
+    background: url(/Images/frame.svg);
+    width: 1060px;
+    height: 125px;
 }
 
 #navDiv {
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    width: 1126px;
-}
-
-.orangeText a {
-    color: #FF5621;
-}
-
-.orangeFill {
-    background: #FF5621;
+    margin-bottom: 20px;
+    overflow: visible;
+    display: inline;
 }
 
 #money .border {
     height: 86px;
     border: 2px solid black;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.borderContent {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.contentContainer {
+    margin-top: -14px;
+    height: 100%;
+    width: 1000px;
+}
+
+.contentContainer .centerContent {
+    width: 85%;
+}
+
+#contentFiller {
+    height: 10px;
+}
+
+.separator {
+    height: 20px;
+    text-align: center;
+    display: block;
+    margin-top: 3px;
+}
+
+#bottom div hr {
+    width: 974px;
+}
+
+div.lineContainer hr {
+    border: none;
+    background-color: black;
+    color: black;
+    height: 2px;
+    text-align: right;
+    margin-top: 9px;
+}
+
+.twoLines {
+    text-align: center;
+    height: 20px;
+    margin-top: 3px;
+}
+
+.lineContainer {
+    display: inline-block;
+    height: 100%;
+}
+
+.littleLine {
+    width: 473px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    height: 70px;
+}
+
+footer div {
+    margin: 0 auto;
+    background: url(/Images/footer.svg);
+    width: 725px;
+    height: 30px;
+}
+
+div img {
+    vertical-align: baseline;
+}
+
+#content {
+    height: 100%;
+}
+
+#lowerContent div div.centerContent {
+    border-left: 2px solid black;
+}
+
+/*Стили длядорожной карты и форм оплаты*/
+
+#lowerContent #leftColumn div.centerContent {
+    border: 0;
+}
+
+.paymentsAndGifts {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.roadMap {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+#leftColumn {
+    margin-top: 45px;
+}
+
+.roadMapUpper {
+    margin: 0 auto;
+    width: 380px;
+    height: 65px;
+    border-radius: 4px;
+    position: relative;
+    background: #81C784;
+    box-shadow: 0px 0px 3px 0 black;
+    text-align: center;
+}
+
+.roadMapLower {
+    text-align: center;
+    margin-top: -5px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 370px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 0px 3px 0 black;
+}
+
+.roadMapLower span {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.collectedSum {
+    position: relative;
+    font-family: Vremena;
+    font-size: 35px;
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+
+.paymentForegroundUpper {
+    width: 370px;
+    height: 55px;
+    border-radius: 4px;
+    background: #EEEEEE;
+    color: #FF6F00;
+    margin-left: 5px;
+    margin-top: 5px;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0px 0px 3px 0 black;
+}
+
+.paymentForegroundUpper div {
+    display: inline-block;
+    text-align: center;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.paymentForegroundUpper p {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 17px;
+}
+
+.paymentBackgroundUpper.selected {
+    margin: 0 auto;
+    width: 380px;
+    height: 65px;
+    border-radius: 4px;
+    background: #84C686;
+    position: relative;
+    box-shadow: 0px 0px 3px 0 black;
+}
+
+.paymentBackgroundUpper {
+    margin: 0 auto;
+    width: 380px;
+    height: 65px;
+    border-radius: 4px;
+    position: relative;
+}
+
+
+.paymentBackgroundLower.selected {
+    margin-top: -5px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 370px;
+    border-radius: 0 0 4px 4px;
+    background: #84C686;
+    box-shadow: 0px 0px 3px 0 black;
+}
+
+.paymentBackgroundLower {
+    margin-top: -5px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 370px;
+    border-radius: 0 0 4px 4px;
+}
+
+.paymentBackgroundLower .mostPop {
+    font-family: Vremena;
+    font-size: 20px;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.paymentForegroundLower {
+    background: white;
+    width: 360px;
+    margin-top: -5px;
+    margin-left: 5px;
+    position: relative;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 0px 3px 0 black;
+}
+
+.paymentForegroundLower>span {
+    display: inline-block;
+    margin-top: 11px;
+    margin-left: 14px;
+}
+
+.paymentSum {
+    font-family: Vremena;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.paymentForm a.payButton {
+    text-align: center;
+    text-decoration: none;
+    height: 44px;
+    width: 125px;
+    background: linear-gradient(to top, #FF8000, #FFA900);
+    color: white;
+    border-radius: 4px;
+    display: table-cell;
+    font-size: 20px;
+    -ms-text-shadow: black 1px 1px 1px;
+    text-shadow: black 1px 1px 1px;
+}
+
+.paymentForm a.payButton p {
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.paymentForm a.payButton:hover {
+    background: linear-gradient(to top, #30A49B, #5AC189);
+    cursor: pointer;
+    border-style: none;
+}
+
+#mostPopular {
+    display: block;
+}
+
+#mostPopular>span {
+    display: inline-block;
+    margin-left: 55px;
+}
+
+span m {
+    color: #E65100;
+}
+
+ul {
+    padding: 0;
+}
+
+.paymentForm {
+    display: inline-block;
+    height: 44px;
+    width: 125px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+/*Стили для страницы команды*/
+
+.teamMember {
+    width: 400px;
+}
+
+.photoLogo {
+    display: inline-block;
+    float: left;
+}
+
+.memberPhoto {
+    width: 100px;
+    height: 100px;
+    border-radius: 4em;
+    background: #757575;
+    position: absolute;
+}
+
+.memberDesc {
+    display: inline-block;
+    float: left;
+    margin-left: 85px;
+    margin-bottom: 80px;
+}
+
+.memberDesc hr {
+    width: 265px;
+    margin: 10px 0;
+    border: none;
+    background-color: #CCCCCC;
+    color: #CCCCCC;
+    height: 2px;
+    text-align: right;
+}
+
+.memberDesc p {
+    font-family: Vremena;
+    margin: 0 0 0;
+}
+
+.memberDesc p.title {
+    font-size: 25px;
+}
+
+.memberDesc p.desc {
+    font-size: 20px;
+}
+
+.vkLogo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 65px;
+    text-align: center;
+}
+
+#teamDiv {
+    margin-top: 50px;
+}
+
+html body {
+    font-family: Vremena;
+}
+
+#overlay {
+  z-index: 3; /* подложка должна быть выше слоев элементов сайта, но ниже слоя модального окна */
+	position: fixed; /* всегда перекрывает весь сайт */
+	background-color: #000; /* черная */
+	opacity: 0.8; /* но немного прозрачна */
+	width: 100%; 
+	height: 100%; /* размером во весь экран */
+	top: 0; 
+	left: 0; /* сверху и слева 0, обязательные свойства! */
+	cursor: pointer;
+	display: none; /* в обычном состоянии её нет) */
+}
+
+#payAndTerms {
+    position: fixed;
+    top: 45%;
+    left: 33%;
+    margin-top: -150px;
+    opacity: 0;
+    z-index: 5;
+    width: 645px;
+    height: 195px;
+    display: none;
+}
+
+.yaForm {
+    display: none;
+    width: 448px;
+    height: 195px;
+    background: #fff;
+    z-index: 5;
+}
+
+#terms {
+    position: absolute;
+    height: 195px;
+    width: 195px;
+    background: #fff;
+    display: inline-block;
+    z-index: 5;
+    margin-left: 5px;
+}
+
+.mapArrow {
+    width: 26px;
+    height: 66px;
+    background-image: url('../Images/rusdom-arrow.svg');
+    margin: 0 auto;
 }

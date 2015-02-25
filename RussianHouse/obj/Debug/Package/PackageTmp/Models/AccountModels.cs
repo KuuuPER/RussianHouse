@@ -28,6 +28,26 @@ namespace RussianHouse.Models
         public DbSet<UserData> UserDatas { get; set; }
     }
 
+    public class YandexContext : DbContext
+    {
+        public YandexContext()
+            : base("DefaultConnection")
+        {
+        }
+
+        public DbSet<YandexToken> YandexToken { get; set; }
+    }
+
+    public class YandexToken
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public string Token { get; set; }
+        public DateTime Date { get; set; }
+    }
+
     [Table("UserData")]
     public class UserData
     {

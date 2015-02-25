@@ -1,1 +1,21 @@
-﻿
+﻿@model RussianHouse.SectionsContent.ISectionContent
+<div id="content" class="fullWidth centerContent">
+    <div id="contentContainer" class="centerContent contentContainer borderContent">
+        <div id="contentFiller"></div>
+        <div class="centerText">
+            <h2 class="VremenaText">
+                @Model.Title
+            </h2>
+            <p class="VremenaText">
+                @Model.Content
+            </p>
+        </div>
+    </div>
+    <div id="bottom" class="separator">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr />
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
+</div>

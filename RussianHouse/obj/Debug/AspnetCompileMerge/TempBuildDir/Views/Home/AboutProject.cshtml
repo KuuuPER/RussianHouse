@@ -1,0 +1,21 @@
+﻿@model RussianHouse.ViewModel.UserDataViewModel
+<div id="content" class="fullWidth centerContent">
+    <div class="centerContent contentContainer borderContent">
+        <div id="contentFiller"></div>
+        <span>
+        <h2 class="VremenaText">
+            @Model.Content.Title
+        </h2>
+        <p class="VremenaText">
+            @Model.Content.Content
+        </p>
+        </span>
+    </div>
+    <div id="bottom" class="separator">
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        <div class="lineContainer">
+            <hr />
+        </div>
+        <img src="/Images/cross.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+    </div>
+</div>

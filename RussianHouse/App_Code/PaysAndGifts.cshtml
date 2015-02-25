@@ -1,0 +1,26 @@
+﻿@helper PaymentsAndGifts(int sum, string[] gifts, bool isPopular)
+{
+    <div class="paymentsAndGifts">
+        <div @(isPopular ? string.Format("class=\"paymentBackgroundUpper\"") : string.Empty)>
+            <div class="paymentForegroundUpper">
+                <p class="paymentSum">
+                    @(sum)
+                </p>
+                &#8381;
+                <div class="payButton">
+                    <p>Выбрать</p>
+                </div>
+            </div>
+        </div>
+        <div class="paymentBackgroundLower">
+            <div class="paymentForegroundLower">
+                @foreach (var s in gifts)
+                {
+                    <p>
+                        @s
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+}

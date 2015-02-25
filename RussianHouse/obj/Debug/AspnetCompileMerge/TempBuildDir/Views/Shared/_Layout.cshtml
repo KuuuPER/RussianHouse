@@ -1,0 +1,162 @@
+﻿@using System.Web.Services.Description
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href='http://webfonts.ru/import/vremena.css' rel='stylesheet' type='text/css'>
+    <link href='/Content/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <link href='/Content/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width"/>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/")
+</head>
+<body>
+<div id="page" class="container">
+    <header>
+        <div id="head" class="centerContent">
+            <div id="money">
+                <div id="currentSumBorder" class="border textCenter">
+                    <div id="currentSum">
+                        <p>
+                            Собрано <b id="gettedSum">10 000</b> рублей из <b>2 500 000</b>
+                        </p>
+                    </div>
+                </div>
+                <div id="projectHelpBorder" value="GetFundRisingContent">
+                    <div id="projectHelp" class="orangeFill">
+                        <p>
+                            <b><i>Помочь проекту!</i></b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="logoMenu">
+            <div id="logo">
+                <img src="/Images/logo.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+            </div>
+            <div id="navDivPic" class="centerContent container">
+                <img src="/Images/frame.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+                <div id="navDiv">
+                    <nav id="menu">
+                        <ul>
+                            <li id="aboutProject" value="GetAboutProjectContent">О проекте</li>
+                            <li id="fundRising" value="GetFundRisingContent">Сбор средств</li>
+                            <li id="news" value="GetNewsContent">Новости</li>
+                            <li id="team" value="GetTeamContent">Команда</li>
+                            <li id="partners" value="GetPartnersContent">Партнёры</li>
+                            <li id="contacts" value="GetContactsContent">Контакты</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    <footer>
+        <div>
+            <img src="/Images/footer.svg" onerror=" this.onerror = null; this.src = 'image.png'; ">
+        </div>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+</body>
+<script type="text/javascript">
+    function getPaymentSubmit() {
+        var elem = this;
+        var form = $(elem).parent('.paymentForegroundUpper').child('form');
+        $(form).submit();
+    }
+
+    {
+        getBalance();
+        markNav();
+
+        function markNav() {
+            if (document.location.pathname === '/') {
+                $($('#menu ul li')[0]).addClass("active");
+            } else {
+                var currentPage = document.location.pathname.split('/')[2];
+
+                var lis = $('ul li');
+
+                for (var i = 0; i < lis.length; i++) {
+                    var li = lis[i];
+
+                    if (li.getAttribute('value') === currentPage) {
+                        $(li).addClass("active");
+                    } else {
+                        $(li).removeClass("active");
+                    }
+                }
+            }
+
+            var content = $('#content');
+            var lowerContent = $('#lowerContent');
+
+            if (content.height() < 700) {
+                content.height(700);
+                lowerContent.height(465);
+            }
+        }
+
+        $('#projectHelpBorder').click(getContent);
+        $('#menu ul li').click(getContent);
+        $('#menu ul li').click(getContent);
+
+        function getContent() {
+            getBalance();
+            $('.paymentForegroundUpper div.payButton').click(getPaymentSubmit);
+
+            var elem = this;
+            var li = $('#menu ul .active');
+
+            $(li).removeClass("active");
+
+            $(elem).addClass("active");
+            var titleText = elem.textContent;
+            var value = elem.getAttribute('value');
+            var path = "/Home/" + value;
+
+            history.pushState(null, titleText, path);
+            $.get(path, { isPartial: true }).done(function(data) {
+                $('#content').replaceWith(data);
+                $('#content').replaceWith(data);
+                markNav();
+            });
+        }
+
+        function getBalance() {
+            $.get("/Home/GetBalance").done(function (data) {
+                if (data !== null) {
+                    $("#gettedSum").text(data);
+                }
+            });
+        }
+
+        $(window).on('popstate', function(e) {
+            updateState();
+        });
+
+        function updateState() {
+            var path = document.location.pathname;
+
+            $.get(path, { isPartial: true }).done(function(data) {
+                $('#content').replaceWith(data);
+                markNav();
+            });
+        }
+    }
+</script>
+</html>
